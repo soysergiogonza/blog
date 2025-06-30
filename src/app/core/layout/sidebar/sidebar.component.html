@@ -1,8 +1,25 @@
-  <div class="example-container" [class.example-is-mobile]="isMobile()">
-    <mat-toolbar class="example-toolbar">
-      <button matIconButton (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-      <h1 class="example-app-name">Responsive App</h1>
-    </mat-toolbar>
+  <div>
+      <mat-toolbar class="z-10 flex justify-between">
+        <picture class="flex gap-4">
+          <button mat-button="elevated"
+                  (click)="snav.toggle()"
+                  matTooltip="Menú"
+                  aria-label="Botón que muestra la barra lateral"
+                  class="!border-2 border-amber-200"
+          >
+            <mat-icon fontIcon="menu" aria-label="Menú" class="scale-125 !m-0"></mat-icon>
+          </button>
+          <img mat-card-image [ngSrc]="logo" alt="Logo" width="80" height="80" class=""/>
+        </picture>
+        <a
+          mat-button="elevated"
+          aria-label="Volver a la página informativa"
+          matTooltip="Volver"
+          href="https://www.sergiogonzalez.tech"
+        >
+          <mat-icon fontIcon="logout" aria-label="Volver a la página informativa" class="scale-125"></mat-icon>
+        </a>
+      </mat-toolbar>
 
     <mat-sidenav-container class="example-sidenav-container"
                            [style.marginTop.px]="isMobile() ? 56 : 0">

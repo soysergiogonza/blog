@@ -1,10 +1,13 @@
 import { MediaMatcher } from "@angular/cdk/layout";
-import { Component, OnDestroy, inject, signal } from "@angular/core";
+import { NgOptimizedImage } from "@angular/common";
+import { Component, inject, type OnDestroy, signal } from "@angular/core";
+import { MatButtonModule } from "@angular/material/button";
+import { MatCardImage } from "@angular/material/card";
+import { MatIconModule } from "@angular/material/icon";
 import { MatListModule } from "@angular/material/list";
 import { MatSidenavModule } from "@angular/material/sidenav";
-import { MatIconModule } from "@angular/material/icon";
-import { MatButtonModule } from "@angular/material/button";
 import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatTooltipModule } from "@angular/material/tooltip";
 
 @Component({
 	selector: "app-sidebar",
@@ -16,9 +19,13 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 		MatIconModule,
 		MatSidenavModule,
 		MatListModule,
+		MatCardImage,
+		NgOptimizedImage,
+		MatTooltipModule,
 	],
 })
 export class SidebarComponent implements OnDestroy {
+	protected logo = "assets/Logo.svg";
 	protected readonly fillerNav = Array.from(
 		{ length: 50 },
 		(_, i) => `Nav Item ${i + 1}`,
