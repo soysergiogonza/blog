@@ -1,4 +1,4 @@
-  <div>
+  <div class="flex flex-col absolute top-0 bottom-0 left-0 right-0">
       <mat-toolbar class="z-10 flex justify-between">
         <picture class="flex gap-4">
           <button mat-button="elevated"
@@ -21,8 +21,7 @@
         </a>
       </mat-toolbar>
 
-    <mat-sidenav-container class="example-sidenav-container"
-                           [style.marginTop.px]="isMobile() ? 56 : 0">
+    <mat-sidenav-container class="example-sidenav-container">
       <mat-sidenav #snav [mode]="isMobile() ? 'over' : 'side'"
                    [fixedInViewport]="isMobile()" fixedTopGap="56">
         <mat-nav-list>
